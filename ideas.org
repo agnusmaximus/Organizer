@@ -1,0 +1,3 @@
+* ideas
+ Tyler Mori - "Different calendars" = basically have different organizations
+ with their own calendar-event subscriptions, that you can "listen" to

@@ -1,0 +1,46 @@
+<div id="calendarhead"><%= month %> <%= year %></div>
+<div id="calendarweekbar">
+  <div>SUN</div>
+  <div>MON</div>
+  <div>TUE</div>
+  <div>WED</div>
+  <div>THU</div>
+  <div>FRI</div>
+  <div>SAT</div>
+</div>
+<div id="cal-line"></div>
+<div id="cal-wrap">
+  <% if (offsetLeft > 0) %>
+  <div class="cal-ends" style="width:<%= offsetLeft %>px;"></div>
+  <% for (var i = 1; i <= numDays; i++) { %>
+    <% if (i == curDay) %>
+      <div><a href="#/date/<%= monthIndex %>/<%= i %>/<%= year %>">
+	  <span class="cal-red"><%= i %></span>
+      </a></div>
+    <% else if (i == todayDay && monthIndex - 1 == todayMonth && year == todayYear) %>
+      <div><a href="#/date/<%= monthIndex %>/<%= i %>/<%= year %>">
+	  <span class="cal-blue daySelect"><%= i %></span>
+      </a></div>
+    <% else %>
+      <div><a href="#/date/<%= monthIndex %>/<%= i %>/<%= year %>"><span class="daySelect"><%= i %></span></a></div>
+  <% } %>
+  <div class="cal-ends" style="width:<%= offsetRight %>px;"></div>
+  <span class="clear"></span>
+</div>
+<div id="cal-foot">
+  <a href="#/date/<%= previousMonthIndex + 1 %>/<%= curDay %>/<%= previousYear %>">
+  <div id="leftmonth" class="decrementMonth unselectable">
+    &larr; <%= previousMonth %>
+  </div>
+  </a>
+  <a href="#/date/<%= nextMonthIndex + 1 %>/<%= curDay %>/<%= nextYear %>">
+  <div id="rightmonth" class="incrementMonth unselectable">
+    <%= nextMonth %> &rarr;
+  </div>
+  </a>
+  <div id="centermonth">
+    <span><a href="#/date/<%= todayMonth + 1 %>/<%= todayDay %>/<%= todayYear %>" class="returnToToday unselectable">Today</a> &middot;</span>
+    <div><form id="calendarNav"><input type="text" placeholder="<%= monthIndex %>/<%= curDay %>/<%= year %>"><form></div>
+  </div>
+</div>
+<div id="cal-foot-safteynet"></div>

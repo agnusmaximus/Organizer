@@ -1,0 +1,26 @@
+<% if (task.get("Done") === "0") { %>
+<div class="atbx"> 
+<% } %>
+<% if (task.get("Done") === "1") { %>
+<div class="atbx dn">
+<% } %>
+  <% if (task.get("Done") === "0") { %>
+  <div class="atbx-emp"><div></div></div>
+  <% } %>
+  <% if (task.get("Done") === "1") { %>
+  <div class="atbx-sel"><div></div></div>
+  <% } %>
+  <div class="atbxelse"> 
+    <% if (task.get("Done") === "0") { %>
+      <div class=""> 
+    <% } %>
+    <% if (task.get("Done") === "1") { %>
+      <div class="s">
+    <% } %>
+    <div class="dos"><%= task.get("Title") %>
+      <div><%= task.get("Description") %></div>
+    </div>
+      </div>
+      </div>
+      <div class="clear"></div>
+  </div>

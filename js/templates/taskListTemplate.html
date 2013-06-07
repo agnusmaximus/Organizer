@@ -1,0 +1,34 @@
+<div id="pretask-ind">
+  <span style="position:absolute;left:15px;">
+  
+  <% if (done) { %>
+  <span class="checkmark" title="Tasks are finished"></span>
+  <% } %>
+  <% if (!done) { %>
+  <span class="working" title="Work needs to be done"></span>
+  <% } %>
+
+  </span>
+
+  <span><%= month %> <%= day %>, <%= year %></span>
+</div>
+
+<!--Begin Todo List -->
+<div id="taskswrap">    
+    <% if (tasks.length != 0) { %>
+    <div class="atitle"> 
+      <div id="autriwrap"> 
+	<div id="autriangle"></div> 
+	<div id="auotriangle"></div>
+      </div>
+      <div></div>
+    </div>    
+    <% } %>
+    
+    <% for (var i = tasks.length-1; i >= 0; i--) { %>
+       <div id="<%= tasks.at(i).get('TaskID') %>"> 
+       </div>
+    <% } %>  
+
+</div>
+<!--end Todo List -->
